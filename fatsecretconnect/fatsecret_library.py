@@ -60,7 +60,6 @@ class FatSecret_Library:
         self.fs = Fatsecret(consumer_key=consumer_key, consumer_secret=consumer_secret)
 
         try:
-
             auth_url = self.fs.get_authorize_url()
 
             # replace text to match required URL in payload send
@@ -235,9 +234,11 @@ class FatSecret_Library:
 
 
 def main():
+    logins_json_path = os.path.join(
+        r"/home/asdf/General/Python/TDEEFatSecretGoogleSheet/src/common/logins.json"
+    )
 
-    # read logins.json
-    with open("logins.json", "r") as f:
+    with open(logins_json_path, "r") as f:
         FS_CREDENTIALS = json.load(f)
 
     fs_lib = FatSecret_Library()
