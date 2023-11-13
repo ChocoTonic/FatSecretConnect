@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from functools import wraps
 from pprint import pprint
 from time import sleep
-from typing import *
+from typing import Any, Callable, Tuple
 
 import pytz
 import requests
